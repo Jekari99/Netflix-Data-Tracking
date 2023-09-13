@@ -334,11 +334,13 @@ body {
     text-align: center;
     background-color: black;
     color: white;
+    padding: 20px 0px;
 }
 
 .about-tutorial h2 {
     margin: 0;
     color: white;
+    font-size: 36px;
 }
 
 #more {
@@ -354,4 +356,9 @@ body {
     background-color: red;
     margin: 5px;
     border-radius: 20px;
+    padding: 10px;
+}
+
+#step1-more {
+    display: none;
 }

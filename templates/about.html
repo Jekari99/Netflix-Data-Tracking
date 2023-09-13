@@ -35,11 +35,15 @@
         <span id="more">
             <ul class="steps-list">
                 <li>
-                    <p>Login to Netflix</p>
-                    <p>Follow this link to submit a request for your personalized Netflix data</p>
-                    <a href="">Request Data</a>
-                    <p>Click "Submit a Request". You will receive a confirmation email</p>
-                    <p>Netflix will have to process your data, this can take from 1-30 days.</p>
+                    <button onclick="showStep()">Login to Netflix</button>
+                    <div id="step1-more">
+                        <p>Follow this link to submit a request for your personalized Netflix data</p>
+                        <a href="">Request Data</a>
+                        <p>Click "Submit a Request". You will receive a confirmation email</p>
+                        <img src="/static/request-data-image.png" alt="Request Data">
+                        <p>Netflix will have to process your data, this can take from 1-30 days.</p>
+                    </div>
+
                 </li>
                 <li>second step</li>
                 <li>third step</li>
@@ -49,6 +53,28 @@
         <button onclick="myFunction()" id="myBtn">See Steps</button>
 
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+
+    <footer class="footer-container">
+        <div class="footer-links-container">
+            <ul class="footer-links">
+                <li><a href="">About</a></li>
+                <li><a href="https://www.netflix.com/account/getmyinfo">Get File</a></li>
+            </ul>
+        </div>
+        <div class="footer-title">
+            <h1>Netflix Data Tracking</h1>
+        </div>
+    </footer>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>

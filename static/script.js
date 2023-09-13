@@ -13,3 +13,12 @@ function myFunction() {
         moreText.style.display = "inline";
     }
 }
+
+function showStep() {
+    if (step1.style.display === "none") {
+        step1.style.display = "block";
+    }
+    else {
+        step1.style.display = "none";
+    }
+}
