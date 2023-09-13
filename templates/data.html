@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Data Tracking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+    <div class="header-main-container data-main-container">
+        <header class="header">
+            <nav class="navbar">
+                <ul class="list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{url_for('data')}}">Data</a></li>
+                    <li><a href="{{url_for('about')}}">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="homeimage">
+                <div class="data-main-titles">
+                    <h1>View my Data</h1>
+                    <div class="data-buttons">
+                        <form action="/sample" method="post">
+                            <input type="submit" value="View Sample Netflix Data">
+                        </form>
+                        <form enctype="multipart/form-data" action="/upload" method="post">
+                            <label for="filename">Upload File</label>
+                            <input type="file" name="filename" id="filename" />
+                            <input type="submit" value="Upload" />
+
+                        </form>
+                    </div>
+                    <div id="data">
+                        {% for table in tables %}
+                        {{titles[loop.index]}}
+                        {{table | safe}} {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Data Tracking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+    <div class="header-main-container">
+        <header class="header">
+            <nav class="navbar">
+                <ul class="list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{url_for('data')}}">Data</a></li>
+                    <li><a href="{{url_for('about')}}">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="homeimage">
+                <div class="homeimage-logo">
+                    <img src="/static/netflix-logo.png" alt="Netflix Logo">
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="site-purpose">
+        <div class="site-purpose-info">
+            <br>
+            <br>
+            <h1>Netflix Data Tracking</h1>
+            <br>
+            <br>
+            <h2>View your Netflix watch history</h2>
+            <br>
+            <br>
+            <p><a href="{{url_for('data')}}" id="button-link"><button class="get-started-button" type="button">Get
+                        Started</button></a></p>
+            <br>
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="homepage-info">
+        <div class="info-image">
+            <img src="/static/homepage-excel-image.png" alt="Excel sheet on a laptop screen">
+        </div>
+        <div class="info-content">
+            <h2>View List of TV Shows/Movies Watched</h2>
+            <h2>View Total Time Watched on Your Favorite Show</h2>
+            <hr>
+            <h2>All In One Place</h2>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="get-data-file-container">
+        <br>
+        <br>
+        <div class="get-file-image">
+            <img src="/static/request-data-image.png" alt="Submit Request for Data image">
+        </div>
+        <br>
+        <br>
+        <div class="get-file-content">
+            <h2>Don't have the necessary file to get started?</h2>
+            <h2>Click the button to request your personalized Netflix data</h2>
+            <a href="https://www.netflix.com/account/getmyinfo" target="_blank"><button class="get-file-button"
+                    type="button">Get File</button></a>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+
+    <footer class="footer-container">
+        <div class="footer-links-container">
+            <ul class="footer-links">
+                <li><a href="">About</a></li>
+                <li><a href="https://www.netflix.com/account/getmyinfo">Get File</a></li>
+            </ul>
+        </div>
+        <div class="footer-title">
+            <h1>Netflix Data Tracking</h1>
+        </div>
+    </footer>
+
+</body>
+
+</html>
