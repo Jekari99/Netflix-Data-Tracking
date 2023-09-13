@@ -14,11 +14,6 @@ body {
     background-size: cover;
 }
 
-.data-main-container {
-    background: url(data-page-image.webp) no-repeat;
-    background-size: cover;
-}
-
 .header {
     width: 100%;
     display: flex;
@@ -270,7 +265,12 @@ body {
 }
 
 /* DATA PAGE STYLES */
-.data-main-content {
+.data-main-container {
+    background: url(data-page-image.webp) no-repeat;
+    background-size: cover;
+}
+
+.data-main {
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -293,4 +293,65 @@ body {
 
 .data-buttons form {
     margin: 5px;
+}
+
+/* ABOUT PAGE STYLES */
+.about-main-container {
+    background: url(about-page-image.jpg) no-repeat;
+    background-size: cover;
+}
+
+.about-main {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.about-info {
+    width: 100%;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-info h1 {
+    text-align: center;
+    transform: translate(0%, 200px);
+    font-size: 68px;
+    padding: 20px;
+    color: white;
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: width 2s, height 4s;
+}
+
+.about-tutorial {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.about-tutorial h2 {
+    margin: 0;
+    color: white;
+}
+
+#more {
+    display: none;
+}
+
+.steps-list {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.steps-list li {
+    background-color: red;
+    margin: 5px;
+    border-radius: 20px;
 }

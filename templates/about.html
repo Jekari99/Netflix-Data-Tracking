@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="header-main-container">
+    <div class="header-main-container about-main-container">
         <header class="header">
             <nav class="navbar">
                 <ul class="list">
@@ -20,14 +20,36 @@
             </nav>
         </header>
         <main>
-            <div class="homeimage">
-                <div class="homeimage-logo">
-                    <img src="/static/netflix-logo.png" alt="Netflix Logo">
+            <div class="about-main">
+                <div class="about-info">
+                    <h1>Netflix Data Tracking</h1>
                 </div>
 
             </div>
         </main>
     </div>
+
+    <div class="about-tutorial">
+        <h2>How to get started</h2>
+        <p id="click">Click to see steps</p>
+        <span id="more">
+            <ul class="steps-list">
+                <li>
+                    <p>Login to Netflix</p>
+                    <p>Follow this link to submit a request for your personalized Netflix data</p>
+                    <a href="">Request Data</a>
+                    <p>Click "Submit a Request". You will receive a confirmation email</p>
+                    <p>Netflix will have to process your data, this can take from 1-30 days.</p>
+                </li>
+                <li>second step</li>
+                <li>third step</li>
+                <li>fourth step</li>
+            </ul>
+        </span>
+        <button onclick="myFunction()" id="myBtn">See Steps</button>
+
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 
