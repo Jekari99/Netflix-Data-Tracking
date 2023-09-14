@@ -347,6 +347,22 @@ body {
     display: none;
 }
 
+#myBtn {
+    padding: 20px;
+    background-color: #a60d0d;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    color: white;
+}
+
+#myBtn:hover {
+    background-color: #e30202;
+    box-shadow: 2px 2px 10px red;
+}
+
 .steps-list {
     list-style-type: none;
     padding: 20px;
@@ -357,8 +373,44 @@ body {
     margin: 5px;
     border-radius: 20px;
     padding: 10px;
+    margin: 0.5rem;
+    cursor: pointer;
 }
 
-#step1-more {
+.steps-list li:hover {
+    background-color: #e30202;
+    box-shadow: 2px 2px 10px red;
+}
+
+#step1-more,
+#step2-more,
+#step3-more {
     display: none;
+}
+
+.step-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.step-button:hover {
+    color: black;
+}
+
+.go-to-upload-button {
+    padding: 20px;
+    background-color: #a60d0d;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    color: white;
+}
+
+.go-to-upload-button:hover {
+    background-color: #420303;
+    box-shadow: 2px 2px 10px rgb(146, 3, 3);
 }

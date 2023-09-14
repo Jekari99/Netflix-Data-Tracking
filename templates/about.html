@@ -34,20 +34,39 @@
         <p id="click">Click to see steps</p>
         <span id="more">
             <ul class="steps-list">
-                <li>
-                    <button onclick="showStep()">Login to Netflix</button>
+                <li onclick="showStep1()">
+                    <p>Login to Netflix</p>
+                    <span id="dots1">...</span>
                     <div id="step1-more">
                         <p>Follow this link to submit a request for your personalized Netflix data</p>
                         <a href="">Request Data</a>
                         <p>Click "Submit a Request". You will receive a confirmation email</p>
                         <img src="/static/request-data-image.png" alt="Request Data">
                         <p>Netflix will have to process your data, this can take from 1-30 days.</p>
+                        <p>Download the .zip file when accessible</p>
                     </div>
 
                 </li>
-                <li>second step</li>
-                <li>third step</li>
-                <li>fourth step</li>
+                <li onclick="showStep2()">
+                    <p>Get necessary .csv file</p>
+                    <span id="dots2">...</span>
+                    <div id="step2-more">
+                        <p>Click on "Content_Interaction"</p>
+                        <img src="https://www.dataquest.io/wp-content/uploads/2020/11/netflix-data-folder-downloaded.jpg"
+                            alt="List of folders">
+                        <p>You'll find a file called "ViewingActivity.csv".</p>
+                    </div>
+                </li>
+                <li onclick="showStep3()">
+                    <p>Upload File</p>
+                    <span id="dots3">...</span>
+                    <div id="step3-more">
+                        <p>Once you finished step 2, upload the "ViewingActivity.csv" to the website to view your data!
+                        </p>
+                        <a href="{{url_for('data')}}"><button class="go-to-upload-button" type="button">Go to
+                                Upload</button></a>
+                    </div>
+                </li>
             </ul>
         </span>
         <button onclick="myFunction()" id="myBtn">See Steps</button>
