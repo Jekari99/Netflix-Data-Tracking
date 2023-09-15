@@ -299,6 +299,10 @@ body {
     margin: 5px;
 }
 
+#paginated-data {
+    visibility: hidden;
+}
+
 /* ABOUT PAGE STYLES */
 .about-main-container {
     background: url(about-page-image.jpg) no-repeat;

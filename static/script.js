@@ -52,3 +52,8 @@ function showStep3() {
         step3.style.display = "block";
     }
 }
+
+function showData() {
+    let data = document.getElementById("paginated-data");
+    data.style.visibility = "visible";
+}

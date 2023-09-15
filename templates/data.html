@@ -24,9 +24,10 @@
                 <div class="data-main-titles">
                     <h1>View my Data</h1>
                     <div class="data-buttons">
-                        <form action="/sample" method="post">
+                        <!-- <form action="/sample" method="post">
                             <input type="submit" value="View Sample Netflix Data">
-                        </form>
+                        </form> -->
+                        <button onclick="showData()">View Sample Data</button>
                         <form enctype="multipart/form-data" action="/upload" method="post">
                             <label for="filename">Upload File</label>
                             <input type="file" name="filename" id="filename" />
@@ -34,11 +35,46 @@
 
                         </form>
                     </div>
-                    <div id="data">
+                    <!-- <div id="data">
                         {% for table in tables %}
                         {{titles[loop.index]}}
                         {{table | safe}} {% endfor %}
+                    </div> -->
+                    <div id="paginated-data">
+                        <h1>Data Table</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Start Time</th>
+                                    <th>Duration</th>
+                                    <th>Title</th>
+                                    <!-- Add more columns as needed -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for index, row in data.iterrows() %}
+                                <tr>
+                                    <td>{{ row['Start Time'] }}</td>
+                                    <td>{{ row['Duration'] }}</td>
+                                    <td>{{ row['Title'] }}</td>
+                                    <!-- Add more columns as needed -->
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            {% if current_page > 1 %}
+                            <a href="?page={{ current_page - 1 }}">Previous</a>
+                            {% endif %}
+
+                            Page {{ current_page }} of {{ total_pages }}
+
+                            {% if current_page < total_pages %} <a href="?page={{ current_page + 1 }}">Next</a>
+                                {% endif %}
+                        </div>
                     </div>
+
                 </div>
 
             </div>

@@ -27,55 +27,50 @@ def getNetflixData(fileName):
     df = df.reset_index()
 
     df["Duration"] = pd.to_timedelta(df["Duration"])
-
-    manifest = df[df["Title"].str.contains("Manifest", regex=False)]
-
-    manifest["weekday"] = manifest["Start Time"].dt.weekday
-    manifest["hour"] = manifest["Start Time"].dt.hour
-    return render_template("data.html", tables=[df.to_html()], titles=[""])
+    return df
 
 
-df = pd.read_csv("SampleNetflixViewingHistory.csv")
+@app.route('/')
+def index():
+    return render_template("index.html")
 
-# @app.route('/')
-# def index():
-#     return render_template("index.html")
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+df = getNetflixData("SampleNetflixViewingHistory.csv")
 def paginate_data(page_number, page_size):
     start_index = (page_number - 1) * page_size
     end_index = start_index + page_size
     paginated_data = df.iloc[start_index:end_index]
     return paginated_data
-@app.route('/')
-def index():
+@app.route('/data')
+def data():
     page = int(request.args.get('page', 1))
     page_size = 10
     total_entries = len(df)
     total_pages = (total_entries + page_size - 1) // page_size
     paginated_data = paginate_data(page, page_size)
-    return render_template('index.html', data=paginated_data, current_page=page, total_pages=total_pages)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@app.route('/data')
-def data():
-    return render_template('data.html')
+    return render_template('data.html', data=paginated_data, current_page=page, total_pages=total_pages)
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-@app.route("/sample", methods=["POST"])
+
+
+@app.route("/")
 def uploadSample():
     if request.method == "POST":
         return getNetflixData("SampleNetflixViewingHistory.csv")
