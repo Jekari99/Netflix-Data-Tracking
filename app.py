@@ -34,9 +34,38 @@ def getNetflixData(fileName):
     manifest["hour"] = manifest["Start Time"].dt.hour
     return render_template("data.html", tables=[df.to_html()], titles=[""])
 
+
+df = pd.read_csv("SampleNetflixViewingHistory.csv")
+
+# @app.route('/')
+# def index():
+#     return render_template("index.html")
+def paginate_data(page_number, page_size):
+    start_index = (page_number - 1) * page_size
+    end_index = start_index + page_size
+    paginated_data = df.iloc[start_index:end_index]
+    return paginated_data
 @app.route('/')
 def index():
-    return render_template("index.html")
+    page = int(request.args.get('page', 1))
+    page_size = 10
+    total_entries = len(df)
+    total_pages = (total_entries + page_size - 1) // page_size
+    paginated_data = paginate_data(page, page_size)
+    return render_template('index.html', data=paginated_data, current_page=page, total_pages=total_pages)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @app.route('/data')
 def data():

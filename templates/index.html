@@ -103,6 +103,53 @@
         </div>
     </footer>
 
+    <h1>Data Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Profile Name</th>
+                <th>Start Time</th>
+                <th>Duration</th>
+                <th>Attributes</th>
+                <th>Title</th>
+                <th>Supplemental Video Type</th>
+                <th>Device Type</th>
+                <th>Bookmark</th>
+                <th>Latest Bookmark</th>
+                <th>Country</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in data.iterrows() %}
+            <tr>
+                <td>{{ row['Profile Name'] }}</td>
+                <td>{{ row['Start Time'] }}</td>
+                <td>{{ row['Duration'] }}</td>
+                <td>{{ row['Attributes'] }}</td>
+                <td>{{ row['Title'] }}</td>
+                <td>{{ row['Supplemental Video Type'] }}</td>
+                <td>{{ row['Device Type'] }}</td>
+                <td>{{ row['Bookmark'] }}</td>
+                <td>{{ row['Latest Bookmark'] }}</td>
+                <td>{{ row['Country'] }}</td>
+                <!-- Add more columns as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        {% if current_page > 1 %}
+        <a href="?page={{ current_page - 1 }}">Previous</a>
+        {% endif %}
+
+        Page {{ current_page }} of {{ total_pages }}
+
+        {% if current_page < total_pages %} <a href="?page={{ current_page + 1 }}">Next</a>
+            {% endif %}
+    </div>
+
 </body>
 
 </html>
