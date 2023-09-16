@@ -6,6 +6,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 script_directory = os.path.dirname(os.path.abspath(__file__))
 
+
 def getNetflixData(fileName):
     df = pd.read_csv(fileName)
     df = df.drop(
@@ -27,50 +28,26 @@ def getNetflixData(fileName):
     df = df.reset_index()
 
     df["Duration"] = pd.to_timedelta(df["Duration"])
-    return df
 
-
-@app.route('/')
-def index():
-    return render_template("index.html")
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-df = getNetflixData("SampleNetflixViewingHistory.csv")
-def paginate_data(page_number, page_size):
-    start_index = (page_number - 1) * page_size
-    end_index = start_index + page_size
-    paginated_data = df.iloc[start_index:end_index]
-    return paginated_data
-@app.route('/data')
-def data():
-    page = int(request.args.get('page', 1))
-    page_size = 10
-    total_entries = len(df)
-    total_pages = (total_entries + page_size - 1) // page_size
-    paginated_data = paginate_data(page, page_size)
-    return render_template('data.html', data=paginated_data, current_page=page, total_pages=total_pages)
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
+    return render_template("data.html", tables=[df.to_html()], titles=[""])
 
 
 @app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/data")
+def data():
+    return render_template("data.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/sample", methods=["POST"])
 def uploadSample():
     if request.method == "POST":
         return getNetflixData("SampleNetflixViewingHistory.csv")
@@ -78,22 +55,22 @@ def uploadSample():
 
 @app.route("/upload", methods=["POST"])
 def upload_file():
-    uploaded_file = request.files['filename']
-    if uploaded_file.filename != '':
+    uploaded_file = request.files["filename"]
+    if uploaded_file.filename != "":
         file_path = os.path.join(script_directory, uploaded_file.filename)
         uploaded_file.save(file_path)
         # Process the uploaded file here
         result = process_file(file_path)
     return getNetflixData(uploaded_file.filename)
-    
+
 
 def process_file(file_path):
     # Implement your file processing logic here
     # You can read the file and generate content as needed
-    with open(file_path, 'r') as file:
+    with open(file_path, "r") as file:
         file_content = file.read()
     return file_content
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
