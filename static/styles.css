@@ -294,7 +294,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 600px;
+    height: 650px;
     background-color: #202421;
     /* transform: translate(0%, 50%); */
 }
@@ -310,16 +310,17 @@ body {
 
 .data-container {
     background-color: #202421;
-    width: 100%;
+    width: 80%;
     height: 500px;
     overflow: auto;
     align-items: center;
     justify-content: center;
     text-align: center;
+    transform: translate(15%, 5%);
 }
 
 .data-content {
-    padding: 10px;
+    padding: 0px;
     max-width: 100%;
 }
 
@@ -327,7 +328,7 @@ body {
     border-spacing: 1;
     border-collapse: collapse;
     background: white;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     overflow: hidden;
     max-width: 100%;
     margin: 0 auto;
@@ -429,6 +430,24 @@ body {
     }
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 
 

@@ -5,6 +5,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 script_directory = os.path.dirname(os.path.abspath(__file__))
+print(script_directory)
 
 
 def getNetflixData(fileName):
