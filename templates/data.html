@@ -20,32 +20,36 @@
             </nav>
         </header>
         <main>
-            <div class="data-main">
-                <div class="data-main-titles">
-                    <h1>View my Data</h1>
-                    <div class="data-buttons">
-                        <form action="/sample" method="post">
-                            <input type="submit" value="View Sample Netflix Data">
-                        </form>
-                        <!-- <button onclick="showData()">View Sample Data</button> -->
-                        <form enctype="multipart/form-data" action="/upload" method="post">
-                            <label for="filename">Upload File</label>
-                            <input type="file" name="filename" id="filename" />
-                            <input type="submit" value="Upload" />
-
-                        </form>
-                    </div>
-                    <div id="data">
-                        {% for table in tables %}
-                        {{titles[loop.index]}}
-                        {{table | safe}} {% endfor %}
-                    </div>
-
-
-                </div>
-
+            <div class="main-title">
             </div>
         </main>
+    </div>
+
+    <div class="data-main">
+        <div class="data-main-titles">
+            <h1>View my Data</h1>
+            <div class="data-buttons">
+                <form action="/sample" method="post">
+                    <input type="submit" value="View Sample Netflix Data">
+                </form>
+                <!-- <button onclick="showData()">View Sample Data</button> -->
+                <form enctype="multipart/form-data" action="/upload" method="post">
+                    <label for="filename">Upload File</label>
+                    <input type="file" name="filename" id="filename" />
+                    <input type="submit" value="Upload" />
+
+                </form>
+            </div>
+            <div class="data-container">
+                <div class="data-content">
+                    {% for table in tables %}
+                    {{titles[loop.index]}}
+                    {{table | safe}}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <br>

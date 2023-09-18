@@ -29,7 +29,11 @@ def getNetflixData(fileName):
 
     df["Duration"] = pd.to_timedelta(df["Duration"])
 
-    return render_template("data.html", tables=[df.to_html()], titles=[""])
+    return render_template(
+        "data.html",
+        tables=[df.to_html(classes="data-table")],
+        titles=[""],
+    )
 
 
 @app.route("/")
