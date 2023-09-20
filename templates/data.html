@@ -41,6 +41,13 @@
                     </form>
                 </div>
             </div>
+            <div class="search-form">
+                <form action="/search" method="post">
+                    <input type="text" name="search_query" placeholder="Enter show/movie name">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+
             <div class="data-container">
                 <div class="data-content">
                     {% for table in tables %}

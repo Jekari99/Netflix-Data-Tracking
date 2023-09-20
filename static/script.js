@@ -52,6 +52,11 @@ function showStep3() {
         step3.style.display = "block";
     }
 }
+let search = document.getElementById("search-query");
 
-
+function showSearch() {
+    search.style.display = "block";
+    // alert("Testing");
+    // console.log("this is after the button was clicked!");
+}
 

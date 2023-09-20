@@ -335,6 +335,10 @@ body {
     background-color: #332b2b;
 }
 
+#search-query {
+    display: none;
+}
+
 .upload-form form input[type="submit"] {
     padding: 10px;
     background-color: #918b8b;
