@@ -294,22 +294,69 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 650px;
+    height: 700px;
     background-color: #202421;
-    /* transform: translate(0%, 50%); */
+}
+
+.data-main-titles h1 {
+    color: white;
+    font-size: 48px;
+    padding: 10px;
 }
 
 .data-buttons {
-    max-width: 100%;
+    width: 100%;
     display: flex;
+    padding: 20px;
 }
 
-.data-buttons form {
+.sample-form {
+    width: 50%;
+    float: left;
+}
+
+.sample-form form {
+    float: left;
+}
+
+.sample-form form input[type="submit"] {
+    padding: 10px;
+    background-color: #918b8b;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
     margin: 5px;
+    color: black;
+    transition: 0.5s;
+}
+
+.sample-form form input[type="submit"]:hover {
+    background-color: #332b2b;
+}
+
+.upload-form form input[type="submit"] {
+    padding: 10px;
+    background-color: #918b8b;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    color: black;
+    transition: 0.5s;
+}
+
+.upload-form form input[type="submit"]:hover {
+    background-color: #332b2b;
+}
+
+.upload-form {
+    width: 50%;
 }
 
 .data-container {
-    background-color: #202421;
+    /* background-color: #202421; */
     width: 80%;
     height: 500px;
     overflow: auto;

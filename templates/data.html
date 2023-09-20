@@ -29,16 +29,17 @@
         <div class="data-main-titles">
             <h1>View my Data</h1>
             <div class="data-buttons">
-                <form action="/sample" method="post">
-                    <input type="submit" value="View Sample Netflix Data">
-                </form>
-                <!-- <button onclick="showData()">View Sample Data</button> -->
-                <form enctype="multipart/form-data" action="/upload" method="post">
-                    <label for="filename">Upload File</label>
-                    <input type="file" name="filename" id="filename" />
-                    <input type="submit" value="Upload" />
-
-                </form>
+                <div class="sample-form">
+                    <form action="/sample" method="post">
+                        <input type="submit" value="View Sample Netflix Data">
+                    </form>
+                </div>
+                <div class="upload-form">
+                    <form enctype="multipart/form-data" action="/upload" method="post">
+                        <input type="file" name="filename" id="filename" />
+                        <input type="submit" value="Upload File" />
+                    </form>
+                </div>
             </div>
             <div class="data-container">
                 <div class="data-content">
