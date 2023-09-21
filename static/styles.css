@@ -294,7 +294,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 700px;
+    height: 800px;
     background-color: #202421;
 }
 
@@ -335,8 +335,26 @@ body {
     background-color: #332b2b;
 }
 
-#search-query {
-    display: none;
+.search-form form input[type="text"] {
+    width: 50%;
+    padding: 15px;
+    background-color: rgb(102, 98, 98);
+    color: black;
+    border: none;
+    border-radius: 20px;
+}
+
+.search-form form button {
+    background: transparent;
+    color: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    transform: translate(-150%, 0%);
+}
+
+.search-form form button:hover {
+    color: black;
 }
 
 .upload-form form input[type="submit"] {
@@ -360,7 +378,6 @@ body {
 }
 
 .data-container {
-    /* background-color: #202421; */
     width: 80%;
     height: 500px;
     overflow: auto;
@@ -379,7 +396,6 @@ body {
     border-spacing: 1;
     border-collapse: collapse;
     background: white;
-    /* border-radius: 6px; */
     overflow: hidden;
     max-width: 100%;
     margin: 0 auto;

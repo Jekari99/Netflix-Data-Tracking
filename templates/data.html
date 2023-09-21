@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Data Tracking</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -44,7 +45,7 @@
             <div class="search-form">
                 <form action="/search" method="post">
                     <input type="text" name="search_query" placeholder="Enter show/movie name" required>
-                    <input type="submit" value="Search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
 
