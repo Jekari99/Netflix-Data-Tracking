@@ -13,7 +13,7 @@ app = Flask(__name__)
 # Configures .env file and gets secret key
 config = Config(".env")
 secret_key = config.get("SECRET_KEY")
-
+secret_key = os.environ.get("SECRET_KEY")
 
 # Configure session to use filesystem
 app.config["SESSION_TYPE"] = "filesystem"
