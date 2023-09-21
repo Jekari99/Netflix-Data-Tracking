@@ -36,14 +36,14 @@
                 </div>
                 <div class="upload-form">
                     <form enctype="multipart/form-data" action="/upload" method="post">
-                        <input type="file" name="filename" id="filename" />
+                        <input type="file" name="filename" id="filename" required />
                         <input type="submit" value="Upload File" />
                     </form>
                 </div>
             </div>
             <div class="search-form">
                 <form action="/search" method="post">
-                    <input type="text" name="search_query" placeholder="Enter show/movie name">
+                    <input type="text" name="search_query" placeholder="Enter show/movie name" required>
                     <input type="submit" value="Search">
                 </form>
             </div>
