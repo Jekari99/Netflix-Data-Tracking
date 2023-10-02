@@ -681,6 +681,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    transform: translate(0%, 50%);
 }
 
 .about-content img {
