@@ -294,7 +294,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 800px;
+    /* height: 1200px; */
     background-color: #202421;
 }
 
@@ -375,6 +375,10 @@ body {
 
 .upload-form {
     width: 50%;
+}
+
+#flash-message {
+    color: white;
 }
 
 .data-container {
@@ -516,6 +520,15 @@ body {
     background: #555;
 }
 
+.data-image {
+    width: 100%;
+    padding: 10px;
+}
+
+.data-image img {
+    max-width: 50%;
+    padding: 10px;
+}
 
 
 /* ABOUT PAGE STYLES */

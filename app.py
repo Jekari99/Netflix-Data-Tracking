@@ -7,6 +7,10 @@ from secret_key_generator import secret_key_generator
 from werkzeug.utils import secure_filename
 from decouple import Config
 from config import UPLOAD_FOLDER
+import matplotlib
+import matplotlib.pyplot as plt
+import base64
+import io
 
 app = Flask(__name__)
 
@@ -141,6 +145,8 @@ def filterNetflixData(search_query, filename):
     # Load the data from the specified file
     df = pd.read_csv(file_path)
 
+    search_query_lower = search_query.lower()
+
     # Perform necessary data transformations and rendering
     df = df.drop(
         [
@@ -160,16 +166,42 @@ def filterNetflixData(search_query, filename):
     df = df.reset_index()
     df["Duration"] = pd.to_timedelta(df["Duration"])
 
+    df["Title_lower"] = df["Title"].str.lower()
+
     # Filter the DataFrame based on the search_query
-    filtered_df = df[df["Title"].str.contains(search_query, regex=False)]
+    filtered_df = df[df["Title_lower"].str.contains(search_query_lower, regex=False)]
+    filtered_df = filtered_df.drop(columns=["Title_lower"])
     if filtered_df.empty:
         flash("No matching entries found.")
-        return redirect("/sample")
+        return redirect("/data")
+    totalTime = filtered_df["Duration"].sum()
+    flash(f"You have watched {search_query} for {totalTime}")
 
+    filtered_df["weekday"] = filtered_df["Start Time"].dt.weekday
+    filtered_df["hour"] = filtered_df["Start Time"].dt.hour
+
+    filtered_df["weekday"] = pd.Categorical(
+        filtered_df["weekday"], categories=[0, 1, 2, 3, 4, 5, 6], ordered=True
+    )
+    filtered_df_by_day = filtered_df["weekday"].value_counts()
+    filtered_df_by_day = filtered_df_by_day.sort_index()
+    matplotlib.rcParams.update({"font.size": 22})
+    filtered_df_by_day.plot(
+        kind="bar", figsize=(20, 10), title=f"{search_query} Episodes Watched by Day"
+    )
+
+    buffer = io.BytesIO()
+    plt.savefig(buffer, format="png")
+    buffer.seek(0)
+
+    image_base64 = base64.b64encode(buffer.read()).decode()
     return render_template(
         "data.html",
         tables=[filtered_df.to_html(classes="data-table")],
         titles=[""],
+        totalTime=totalTime,
+        search_query=search_query,
+        image_base64=image_base64,
     )
 
 
