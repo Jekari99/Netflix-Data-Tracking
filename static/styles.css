@@ -32,7 +32,17 @@ body {
 
 .whole-nav {
     display: flex;
+    /* width: 100%; */
+    /* position: fixed; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin-top: 2rem; */
 }
+
+/* .whole-nav-scrolled {
+    background-color: #67148d;
+    z-index: 1;
+} */
 
 .navbar {
     align-items: center;
@@ -745,5 +755,17 @@ body {
         display: block;
         color: white;
         padding: 10px;
+    }
+
+    .homepage-info {
+        display: block;
+    }
+
+    .info-image {
+        width: 100%;
+    }
+
+    .info-content {
+        width: 100%;
     }
 }

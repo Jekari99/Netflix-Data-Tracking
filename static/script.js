@@ -73,12 +73,18 @@ function navShow() {
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-x');
         nav.classList.toggle('show');
-
     }
-
-
-
 }
+
+// window.onscroll = function () { windowScroll(); };
+
+// function windowScroll() {
+//     if (document.documentElement.scrollTop > 0) {
+//         document.getElementsByClassName("whole-nav").classList.add("whole-nav-scrolled");
+//     } else {
+//         document.getElementsByClassName("whole-nav").classList.remove("whole-nav-scrolled");
+//     }
+// }
 
 
 
