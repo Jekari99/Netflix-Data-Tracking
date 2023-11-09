@@ -16,6 +16,7 @@ body {
     width: 100%;
     background: url(home-background-image.png) no-repeat;
     background-size: cover;
+    height: 500px;
 }
 
 .header {
@@ -73,16 +74,20 @@ body {
     width: 100%;
     align-items: center;
     justify-content: center;
+    display: flex;
 }
 
 .homeimage-logo {
     width: 50%;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .homeimage img {
     max-width: 100%;
-    transform: translate(50%, 0%);
+    transform: translate(0%, 30%);
+    scale: 1.5;
     animation: fadeInAnimation ease 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
