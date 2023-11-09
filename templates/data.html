@@ -7,18 +7,25 @@
     <title>Netflix Data Tracking</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/49ffb4444f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="header-main-container data-main-container">
         <header class="header">
-            <nav class="navbar">
-                <ul class="list">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="{{url_for('data')}}">Data</a></li>
-                    <li><a href="{{url_for('about')}}">About</a></li>
-                </ul>
-            </nav>
+            <div class="whole-nav">
+                <div class="navbar-container">
+                    <nav class="navbar" id="nav">
+                        <ul class="list">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="{{url_for('data')}}">Data</a></li>
+                            <li><a href="{{url_for('about')}}">About</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <span id='icon-open' onclick="navShow()"><i class='fa-solid fa-bars' id="icon"></i></span>
+            </div>
+
         </header>
         <main>
             <div class="main-title">

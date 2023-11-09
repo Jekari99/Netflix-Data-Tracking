@@ -30,6 +30,10 @@ body {
 
 }
 
+.whole-nav {
+    display: flex;
+}
+
 .navbar {
     align-items: center;
     justify-content: center;
@@ -68,6 +72,12 @@ body {
     color: white;
     border-radius: 10px;
     background-color: #a60d0d;
+}
+
+#icon-open {
+    padding: 10px;
+    font-size: 22px;
+    display: none;
 }
 
 .homeimage {
@@ -691,4 +701,49 @@ body {
 
 .about-content img {
     width: 100%;
+}
+
+@media screen and (max-width: 880px) {
+    .navbar {
+        display: none;
+        background-color: rgb(214, 40, 40);
+        height: 100vh;
+        width: 220px;
+        z-index: 1;
+        position: absolute;
+        margin: 0;
+        right: 0;
+    }
+
+    .show {
+        display: block;
+        background-color: rgb(214, 40, 40);
+        height: 100vh;
+        width: 220px;
+        z-index: 1;
+        position: absolute;
+        margin: 0;
+        right: 0;
+    }
+
+    #icon-open {
+        display: block;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+    }
+
+    #icon-open:hover {
+        cursor: pointer;
+    }
+
+    .list {
+        display: block;
+    }
+
+    .list li {
+        display: block;
+        color: white;
+        padding: 10px;
+    }
 }

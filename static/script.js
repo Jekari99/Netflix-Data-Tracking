@@ -60,3 +60,25 @@ function showSearch() {
     // console.log("this is after the button was clicked!");
 }
 
+
+//Navbar
+function navShow() {
+    let open = document.getElementById('icon-open');
+    let nav = document.getElementById('nav');
+    let icon = document.getElementById('icon');
+
+    let clicked = true;
+
+    if (clicked) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-x');
+        nav.classList.toggle('show');
+
+    }
+
+
+
+}
+
+
+
