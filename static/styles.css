@@ -768,4 +768,38 @@ body {
     .info-content {
         width: 100%;
     }
+
+    .data-buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sample-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    .sample-form form input[type="submit"] {
+        margin: 0;
+    }
+
+    .upload-form {
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    .search-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-form form {
+        width: 100%;
+    }
 }
