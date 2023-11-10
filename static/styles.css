@@ -816,6 +816,19 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    .header-main-container {
+        background-size: contain;
+        height: 390px;
+    }
+
+    .homeimage-logo img {
+        display: none;
+    }
+
+    .about-info h1 {
+        display: none;
+    }
+
     .footer-container {
         flex-direction: column-reverse;
         align-items: center;
@@ -846,5 +859,35 @@ body {
     .footer-title h1 {
         float: none;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-main-container {
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .header-main-container {
+        height: 286px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .header-main-container {
+        height: 251px;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .header-main-container {
+        height: 227px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .header-main-container {
+        height: 198px;
     }
 }
