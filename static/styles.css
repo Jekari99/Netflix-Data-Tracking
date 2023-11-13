@@ -79,9 +79,8 @@ body {
 }
 
 .list a:hover {
-    color: white;
     border-radius: 10px;
-    background-color: #a60d0d;
+    color: #a60d0d;
 }
 
 #icon-open {
@@ -147,7 +146,7 @@ body {
 }
 
 .site-purpose-info h1 {
-    font-size: 64px;
+    font-size: clamp(3rem, 5vw, 4rem);
     font-family: Montserrat, sans-serif;
     margin: 0;
 }
@@ -762,6 +761,14 @@ body {
         padding: 10px;
     }
 
+    .list li a {
+        color: white;
+    }
+
+    .list a:hover {
+        color: initial;
+    }
+
     .homepage-info {
         display: block;
     }
@@ -817,7 +824,7 @@ body {
 
 @media screen and (max-width: 600px) {
     .header-main-container {
-        background-size: contain;
+        /* background-size: unset; */
         height: 390px;
     }
 
@@ -825,8 +832,22 @@ body {
         display: none;
     }
 
+    .get-started-button,
+    .get-file-button {
+        width: 50%;
+    }
+
     .about-info h1 {
         display: none;
+    }
+
+    #myBtn,
+    .go-to-upload-button {
+        width: 50%;
+    }
+
+    .about-content {
+        transform: none;
     }
 
     .footer-container {
